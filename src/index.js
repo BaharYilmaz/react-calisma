@@ -1,12 +1,19 @@
 import React from 'react';
+import axios from "axios";
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
+import App from './app/App';
+import * as _redux from "./redux";
+import store from "./redux/store";
+import "./_assests/fonts/fontello.css";
 import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+_redux.setupAxios(axios, store);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App store={store} />
   </React.StrictMode>,
   document.getElementById('root')
 );
